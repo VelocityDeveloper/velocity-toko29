@@ -1,5 +1,5 @@
-Velocity Child Toko 11
+Velocity Child Toko 29
 =================
 
-Child Theme for Toko 11.
+Child Theme for Toko 29.
 
