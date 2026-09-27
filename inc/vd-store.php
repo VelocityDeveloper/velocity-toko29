@@ -236,12 +236,12 @@ function velocity_toko29_produk_terkait($jumlah = 4)
 /**
  * Ikon profil pelanggan ke halaman Profil Saya VD Store.
  */
-function velocity_toko29_profil()
+function velocity_toko29_profil($ukuran = 16)
 {
     $s = get_option('wp_store_settings', []);
     $id = isset($s['page_profile']) ? absint($s['page_profile']) : 0;
     $url = $id ? get_permalink($id) : site_url('/profil-saya/');
-    return '<span class="linkprofile"><a href="' . esc_url($url) . '" aria-label="Profil">' . velocity_toko29_ikon('profil') . '</a></span>';
+    return '<span class="linkprofile"><a href="' . esc_url($url) . '" aria-label="Profil">' . velocity_toko29_ikon('profil', $ukuran) . '</a></span>';
 }
 
 /**

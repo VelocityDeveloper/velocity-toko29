@@ -111,3 +111,17 @@ article.product.type-product > .block-primary,
         max-width: 26% !important;
     }
 }
+/* Tombol profil & keranjang di header: ukuran sama, ikon lebih besar dan putih. */
+.header-top .tombol-header {
+    width: 48px;
+    height: 42px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.header-top .tombol-header a,
+.header-top .tombol-header button,
+.header-top .tombol-header svg {
+    color: #fff !important;
+}

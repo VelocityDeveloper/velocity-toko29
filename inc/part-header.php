@@ -14,8 +14,8 @@
         </div>
         <div class="col-4 col-md-4">
             <div class="d-flex justify-content-center justify-content-md-end align-items-center">
-                <div class="btn btn-dark bg-theme border-0 me-2"><?php echo velocity_toko29_profil(); ?></div>
-                <div class="btn btn-dark bg-theme border-0"><?php echo do_shortcode('[wp_store_cart size="16"]'); ?></div>
+                <div class="btn btn-dark bg-theme border-0 me-2 tombol-header"><?php echo velocity_toko29_profil(22); ?></div>
+                <div class="btn btn-dark bg-theme border-0 tombol-header"><?php echo do_shortcode('[wp_store_cart size="22"]'); ?></div>
             </div>
         </div>
     </div>
