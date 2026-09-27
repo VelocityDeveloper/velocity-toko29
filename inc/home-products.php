@@ -1,29 +1,23 @@
 <?php
-// The Query.
-$args = array(
-    'post_type' => 'product',
-    'posts_per_page'=> 12
-);
-$the_query = new WP_Query( $args );
+// Produk terbaru VD Store di beranda (12 produk) + tautan ke arsip produk.
+$the_query = new WP_Query(array(
+    'post_type' => 'store_product',
+    'posts_per_page' => 12
+));
 
-// The Loop.
-if ( $the_query->have_posts() ) {
+if ($the_query->have_posts()) {
     echo '<div class="row g-2">';
-	while ( $the_query->have_posts() ) {
-		$the_query->the_post();
-        
-        do_action('velocitytoko_product_loop');
-	}
-	echo '</div>';
-
-    echo '<div class="text-center mt-2 mb-5">';
-        echo '<a class="btn btn-outline-secondary btn-sm px-4 border-theme shadow-sm" href="'.get_site_url().'/products">Produk lainnya</a>';
+    while ($the_query->have_posts()) {
+        $the_query->the_post();
+        velocity_toko29_kartu_produk();
+    }
     echo '</div>';
 
+    echo '<div class="text-center mt-2 mb-5">';
+    echo '<a class="btn btn-outline-secondary btn-sm px-4 border-theme shadow-sm" href="' . esc_url(get_post_type_archive_link('store_product')) . '">Produk lainnya</a>';
+    echo '</div>';
 } else {
-	esc_html_e( 'Sorry, no products here.' );
+    esc_html_e('Sorry, no products here.');
 }
 
-
-// Restore original Post Data.
 wp_reset_postdata();

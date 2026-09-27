@@ -4,17 +4,18 @@
             <?php the_custom_logo(); ?>
         </div>
         <div class="col-8 col-md-4">
-            <form action="<?php echo get_site_url(); ?>/products" class="d-flex border rounded overflow-hidden" method="get">
-                <input style="font-size: 12px;" type="text" name="s" placeholder="Cari.." class="form-control h-auto rounded-0 border-0">
-                <button type="submit" class="border-0 btn btn-light h-auto rounded-0 border-0">
-                    <svg class="bi" fill="currentColor" width="14" height="14"><use href="#search"></use></svg>
+            <form action="<?php echo esc_url(get_post_type_archive_link('store_product') ?: home_url('/')); ?>" class="d-flex border rounded overflow-hidden bg-white" method="get" role="search">
+                <input style="font-size: 12px;" type="text" name="s" placeholder="Cari.." aria-label="Cari produk" class="form-control h-auto rounded-0 border-0" value="<?php echo esc_attr(get_search_query()); ?>">
+                <input type="hidden" name="post_type" value="store_product">
+                <button type="submit" class="border-0 btn btn-light h-auto rounded-0 border-0" aria-label="Cari">
+                    <?php echo velocity_toko29_ikon('cari', 14); ?>
                 </button>
             </form>
         </div>
         <div class="col-4 col-md-4">
             <div class="d-flex justify-content-center justify-content-md-end align-items-center">
-                <div class="btn btn-dark bg-theme border-0 me-2"><?php echo do_shortcode('[profile]'); ?></div>
-                <div class="btn btn-dark bg-theme border-0"><?php echo do_shortcode('[cart]'); ?></div>
+                <div class="btn btn-dark bg-theme border-0 me-2"><?php echo velocity_toko29_profil(); ?></div>
+                <div class="btn btn-dark bg-theme border-0"><?php echo do_shortcode('[wp_store_cart size="16"]'); ?></div>
             </div>
         </div>
     </div>
